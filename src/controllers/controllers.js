@@ -13,7 +13,7 @@ import { uploadRenderedImage } from "../services/upload-rendered-image.js";
 
 const controllers ={ 
 
-    createProductDb: ()=>{
+    createProductDb: ( req, res )=>{
         try {
             createProductDb( req, res );       
         } catch (error) {
@@ -21,7 +21,7 @@ const controllers ={
         }
     } ,
 
-    addProductToList: ()=>{
+    addProductToList: ( req, res )=>{
         try {
             addProductToList( req, res );       
         } catch (error) {
@@ -29,7 +29,7 @@ const controllers ={
         }
     } ,
 
-    deleteAllProducts: ()=>{
+    deleteAllProducts: ( req, res )=>{
         try {
             deleteAllProducts( req, res );       
         } catch (error) {
@@ -37,7 +37,7 @@ const controllers ={
         }
     } ,
 
-    deletebackupProduct: ()=>{
+    deletebackupProduct: ( req, res )=>{
         try {
             deletebackupProduct( req, res );       
         } catch (error) {
@@ -45,7 +45,7 @@ const controllers ={
         }
     } ,
 
-    deleteProductDB: ()=>{
+    deleteProductDB: ( req, res )=>{
         try {
             deleteProductDB( req, res );       
         } catch (error) {
@@ -53,7 +53,7 @@ const controllers ={
         }
     } ,
 
-    getCrossedOutProducts: ()=>{
+    getCrossedOutProducts: ( req, res )=>{
         try {
             getCrossedOutProducts( req, res );       
         } catch (error) {
@@ -61,7 +61,7 @@ const controllers ={
         }
     } ,
 
-    getProductsList: ()=>{
+    getProductsList: ( req, res )=>{
         try {
             getProductsList( req, res );       
         } catch (error) {
@@ -69,7 +69,7 @@ const controllers ={
         }
     } ,
 
-    saveCrossedOutProducts: ()=>{
+    saveCrossedOutProducts: ( req, res )=>{
         try {
             saveCrossedOutProducts( req, res );       
         } catch (error) {
@@ -77,7 +77,7 @@ const controllers ={
         }
     } ,
 
-    searchProductDB: ()=>{
+    searchProductDB: ( req, res )=>{
         try {
             searchProductDB( req, res );       
         } catch (error) {
@@ -85,7 +85,7 @@ const controllers ={
         }
     } ,
 
-    updateProductList: ()=>{
+    updateProductList: ( req, res )=>{
         try {
             updateProductList( req, res );       
         } catch (error) {
@@ -93,7 +93,7 @@ const controllers ={
         }
     } ,
 
-    updateProductDB: ()=>{
+    updateProductDB: ( req, res )=>{
         try {
             updateProductDB( req, res );       
         } catch (error) {
@@ -101,7 +101,7 @@ const controllers ={
         }
     } ,
 
-    set_rendered_image : (req, res)=>{
+    set_rendered_image : ( req, res )=>{
 
         try{
             console.log('hello');
