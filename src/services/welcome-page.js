@@ -1,4 +1,4 @@
-import { Router } from "../../bookstores/bookstores.js";
+import { Router } from "../bookstores/bookstores.js";
 
 const welcomePage = Router();
 
