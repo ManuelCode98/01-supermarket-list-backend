@@ -1,10 +1,9 @@
-import { PrismaClient, Router } from "../../bookstores/bookstores.js";
+import { PrismaClient} from "../../bookstores/bookstores.js";
 
 
 const prisma = new PrismaClient();
-const createProductDb = Router();
 
-createProductDb.post( '/create-product', async( req, res )=>{
+const createProductDb = async( req, res )=>{
 
     const { product_name, product_photo, product_amount, product_price } = req.body;
 
@@ -42,7 +41,7 @@ createProductDb.post( '/create-product', async( req, res )=>{
         await prisma.$disconnect();
     }
 
-} );
+};
 
 export {
     createProductDb,
