@@ -1,10 +1,9 @@
-import { PrismaClient, Router } from "../../bookstores/bookstores.js";
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 
 const prisma = new PrismaClient();
-const addProductToList = Router();
 
-addProductToList.post( '/add-product-to-list', async( req, res )=>{
+const addProductToList = async( req, res )=>{
 
     const id = parseInt( req.body.id );
     const { product_name, product_photo, product_amount, product_price, result, crossed_out } = req.body;
@@ -49,7 +48,7 @@ addProductToList.post( '/add-product-to-list', async( req, res )=>{
         await prisma.$disconnect();
     }
 
-} );
+};
 
 export {
     addProductToList,

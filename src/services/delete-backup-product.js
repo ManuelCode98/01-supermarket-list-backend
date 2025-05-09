@@ -1,10 +1,8 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 const prisma = new PrismaClient();
-const deletebackupProduct = Router();
 
-
-deletebackupProduct.delete( '/delete-backup-product/:id', async(req, res)=>{
+const deletebackupProduct = async(req, res)=>{
 
     const id = parseInt( req.params.id );
 
@@ -49,7 +47,7 @@ deletebackupProduct.delete( '/delete-backup-product/:id', async(req, res)=>{
     }
 
 
-})
+};
 
 
 export {

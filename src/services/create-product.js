@@ -1,4 +1,4 @@
-import { PrismaClient} from "../../bookstores/bookstores.js";
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 
 const prisma = new PrismaClient();

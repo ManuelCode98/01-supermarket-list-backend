@@ -1,10 +1,8 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 const prisma = new PrismaClient();
-const searchProductDB = Router();
 
-
-searchProductDB.post( '/search-product', async( req, res )=>{
+const searchProductDB = async( req, res )=>{
 
     const { product_name } = req.body;
     
@@ -22,10 +20,7 @@ searchProductDB.post( '/search-product', async( req, res )=>{
         success: true,
         data: searchingProduct,
     })
-
-    // Devuelve un array de productos que se encuentra en data
-
-});
+};
 
 
 export {

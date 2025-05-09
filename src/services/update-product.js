@@ -1,9 +1,7 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
-
+import { PrismaClient } from "../bookstores/bookstores.js";
 const prisma = new PrismaClient();
-const updateProductDB = Router();
 
-updateProductDB.put( '/update-product/:id', async( req, res )=>{
+const updateProductDB = async( req, res )=>{
 
     const id = parseInt( req.params.id );
     const { product_name, product_photo, product_amount, product_price } = req.body;
@@ -60,7 +58,7 @@ updateProductDB.put( '/update-product/:id', async( req, res )=>{
         await prisma.$disconnect();
     }
 
-} );
+};
 
 
 export {

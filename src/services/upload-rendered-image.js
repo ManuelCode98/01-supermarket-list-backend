@@ -3,7 +3,7 @@
 
 const uploadRenderedImage = ()=>{ 
 
-    console.log('hola desde upload');
+    console.log('No implementado');
 
 };
 

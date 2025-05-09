@@ -1,9 +1,8 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 const prisma = new PrismaClient();
-const getProductsList = Router();
 
-getProductsList.get( '/show-products', async ( req, res ) => {
+const getProductsList = async ( req, res ) => {
 
     const products = await prisma.added_Products.findMany( )
     const product_photo = 'https://media.istockphoto.com/id/1364735396/es/vector/lista-de-comprobaci%C3%B3n-icono-dise%C3%B1o-plano.jpg?s=612x612&w=0&k=20&c=MY022-KOWot_dwvMEOywSPMJRbqrcJ6NfKfqvi1vM70=';
@@ -24,7 +23,7 @@ getProductsList.get( '/show-products', async ( req, res ) => {
         data: 'No hay productos para mostrar en la lista'
     })
 
-} )
+};
 
 
 export {

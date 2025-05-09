@@ -5,7 +5,7 @@ import { deletebackupProduct } from '../services/delete-backup-product.js';
 import { deleteProductDB } from '../services/delete-product.js';
 import { getCrossedOutProducts } from '../services/get-crossed-out-products.js';
 import { getProductsList } from '../services/products-added-to-the-list.js';
-import { saveCrossedOutProducts } from './routes/save-crossed-out-products.js';
+import { saveCrossedOutProducts } from '../services/save-crossed-out-products.js';
 import { searchProductDB } from '../services/search-product.js';
 import { updateProductList } from '../services/update-product-list.js';
 import { updateProductDB } from '../services/update-product.js';

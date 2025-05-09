@@ -1,10 +1,9 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 
 const prisma = new PrismaClient();
-const getCrossedOutProducts = Router();
 
-getCrossedOutProducts.get('/get-crossed-out-products', async( req, res )=>{
+const getCrossedOutProducts = async( req, res )=>{
 
 
     try {
@@ -48,7 +47,7 @@ getCrossedOutProducts.get('/get-crossed-out-products', async( req, res )=>{
         await prisma.$disconnect();
     }
 
-})
+};
 
 
 export {

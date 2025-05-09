@@ -1,10 +1,8 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 const prisma = new PrismaClient();
-const saveCrossedOutProducts = Router();
 
-
-saveCrossedOutProducts.post( '/save-crossed-out-products', async( req, res )=>{
+const saveCrossedOutProducts = async( req, res )=>{
 
     const id = parseInt(req.body.id);
     const { product_name, product_photo, product_amount, product_price, result, crossed_out } = req.body;
@@ -92,9 +90,9 @@ saveCrossedOutProducts.post( '/save-crossed-out-products', async( req, res )=>{
 
     return
 
-}
+    }
 
-if( crossed_out === 'crossed-out' ){
+    if( crossed_out === 'crossed-out' ){
 
     const theProductExists = await prisma.crossedOutProduct.findUnique({
         where: {
@@ -102,10 +100,9 @@ if( crossed_out === 'crossed-out' ){
         }
     })
 
-    // console.log(product);
 
     if( theProductExists ){
-        // console.log('llamado3');
+
         await prisma.added_Products.update({
             where: {
                 id: theProductExists.id,
@@ -123,14 +120,9 @@ if( crossed_out === 'crossed-out' ){
     }
 
     return;
-}
-
-
-    
-
-    
-    
-});
+    }
+   
+};
 
 
 

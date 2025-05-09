@@ -1,10 +1,9 @@
-import { PrismaClient, Router } from '../../bookstores/bookstores.js';
+import { PrismaClient } from "../bookstores/bookstores.js";
 
 const prisma = new PrismaClient();
-const deleteAllProducts = Router();
 
 
-deleteAllProducts.delete('/delete-all-products', async( req, res )=>{
+const deleteAllProducts = async( req, res )=>{
 
     await prisma.added_Products.deleteMany();
     await prisma.crossedOutProduct.deleteMany();
@@ -16,7 +15,7 @@ deleteAllProducts.delete('/delete-all-products', async( req, res )=>{
         data: products, 
     });
 
-});
+};
 
 export {
     deleteAllProducts,
