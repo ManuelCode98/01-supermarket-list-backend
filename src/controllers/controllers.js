@@ -10,6 +10,7 @@ import { searchProductDB } from '../services/search-product.js';
 import { updateProductList } from '../services/update-product-list.js';
 import { updateProductDB } from '../services/update-product.js';
 import { uploadRenderedImage } from "../services/upload-rendered-image.js";
+import { getAllProducts } from "../services/get-all-products.js";
 
 const controllers ={ 
 
@@ -108,6 +109,16 @@ const controllers ={
             uploadRenderedImage()
         }
         catch(error){
+            res.status(500).json({ error: error.message })
+        }
+    },
+
+    getAllProducts : ( req, res )=>{
+        try {
+
+            getAllProducts( req, res );
+        }
+        catch( error ){
             res.status(500).json({ error: error.message })
         }
     },

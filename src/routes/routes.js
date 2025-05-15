@@ -14,7 +14,8 @@ routes.post('/save-crossed-out-products', controllers.saveCrossedOutProducts );
 routes.delete('/delete-backup-product/:id', controllers.deletebackupProduct );
 routes.get('/get-crossed-out-products', controllers.getCrossedOutProducts );
 routes.put('/update-product-list/:id', controllers.updateProductList  );
-routes.post('/upload-rendered-image', controllers.set_rendered_image )
+routes.post('/upload-rendered-image', controllers.set_rendered_image );
+routes.get('/get-all-products', controllers.getAllProducts );
 
 
 export {
