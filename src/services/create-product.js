@@ -25,7 +25,7 @@ const createProductDb = async( req, res )=>{
             res.json({
                 status: 200,
                 success: true,
-                data: `Producto creado bajo el id ${ id }`,
+                id,
             });
 
             return;
