@@ -23,9 +23,9 @@ model added_Products {
     product_name String
     product_photo String
     crossed_out String
-    product_amount Int
-    product_price Int
-    result Int
+    product_amount Int[]
+    product_price Int[]
+    result Int[]
 }
 
 model crossedOutProduct {
@@ -33,8 +33,8 @@ model crossedOutProduct {
     product_name String
     product_photo String
     crossed_out String
-    product_amount Int
-    product_price Int
-    result Int
+    product_amount Int[]
+    product_price Int[]
+    result Int[]
     
 }

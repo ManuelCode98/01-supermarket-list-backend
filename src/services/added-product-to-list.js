@@ -6,13 +6,24 @@ const prisma = new PrismaClient();
 const addProductToList = async( req, res )=>{
 
     const id = parseInt( req.body.id );
-    const { product_name, product_photo, product_amount, product_price, result, crossed_out } = req.body;
-
+    const { product_name, product_photo, crossed_out, product_amount, product_price, result } = req.body;
+    
     try {
 
+        const productExists = await prisma.added_Products.findUnique( { where: {id} } )
+        if( productExists ){
+            res.json({
+                status: 200,
+                success: false,
+                data: `El producto '${product_name}' ya esta en la lista`,
+            });
+
+            return
+        }
+        
         if( product_amount && product_price ){
 
-           const saveListProduct = await prisma.added_Products.create( {
+           await prisma.added_Products.create( {
                 data: {
                     id,
                     product_name,
@@ -20,7 +31,7 @@ const addProductToList = async( req, res )=>{
                     crossed_out,
                     product_amount,
                     product_price,
-                    result,
+                    result
                 }
             } )
             
@@ -28,10 +39,10 @@ const addProductToList = async( req, res )=>{
             res.json({
                 status: 200,
                 success: true,
-                data: `Producto añadido a la lista "${ product_name }"`,
+                data: `Producto añadido a la lista '${ product_name }'`,
             });
 
-            console.log(`Producto añadido a la lista fue "${ product_name}"` );
+            // console.log(`Producto añadido a la lista fue '${ product_name}'` );
             return;
 
         }
