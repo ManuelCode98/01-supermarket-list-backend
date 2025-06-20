@@ -5,6 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "dev":"nodemon index.js",
     "migrate": "npx prisma migrate deploy",
     "build":"npm install && npm run migrate",
