@@ -2,11 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "deploy": "npm run build && npm start",
-    "build": "npm install && npm run migrate",
+    "build": "npm install && npx prisma generate && npm run migrate",
     "migrate": "npx prisma migrate deploy",
     "start": "node index.js",
     "dev": "nodemon index.js",
